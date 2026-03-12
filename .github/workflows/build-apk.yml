@@ -1,0 +1,59 @@
+name: Build APK
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build Debug APK
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: gradle
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug --no-daemon
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ESP32C6-BLE-Logger-debug
+          path: app/build/outputs/apk/debug/app-debug.apk
+          retention-days: 30
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0.${{ github.run_number }}
+          name: "BLE Logger v1.0.${{ github.run_number }}"
+          body: |
+            ## ESP32-C6 BLE Logger APK
+
+            Android app for ESP32-C6 AHT20+BMP280 BLE Data Logger.
+
+            ### Features
+            - BLE scan & connect to "ESP32-C6 BLE"
+            - Live sensor display: AHT20 temp/humidity + BMP280 temp/pressure
+            - 20-slot buffer progress indicator
+            - Commands: CLEAR, RESET, READ, CLRBUF
+            - Timestamped event log
+            - Light yellow theme
+
+            ### Install
+            Download `app-debug.apk`, enable **Install unknown apps** on your Android device, then install.
+          files: app/build/outputs/apk/debug/app-debug.apk
+          draft: false
+          prerelease: false
