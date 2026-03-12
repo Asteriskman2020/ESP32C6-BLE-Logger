@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ESP32-C6 BLE Logger</string>
+    <string name="connection">Connection</string>
+    <string name="not_connected">Not connected</string>
+    <string name="scan">SCAN</string>
+    <string name="stop_scan">STOP</string>
+    <string name="disconnect">DISCONNECT</string>
+    <string name="sensor_data">Sensor Data</string>
+    <string name="label_temp_aht">🌡 AHT20 Temp</string>
+    <string name="label_humidity">💧 Humidity</string>
+    <string name="label_temp_bmp">🌡 BMP280 Temp</string>
+    <string name="label_pressure">📊 Pressure</string>
+    <string name="buffer_title">Buffer</string>
+    <string name="buffer_count">%1$d / %2$d</string>
+    <string name="buffer_count_default">0 / 20</string>
+    <string name="message_title">Status &amp; Commands</string>
+    <string name="cmd_clear">CLEAR</string>
+    <string name="cmd_reset">RESET</string>
+    <string name="cmd_read">READ</string>
+    <string name="cmd_clrbuf">CLRBUF</string>
+    <string name="log_title">Event Log</string>
+    <string name="clear_log">CLEAR LOG</string>
+    <string name="log_hint">BLE events will appear here...</string>
+    <string name="status_ready">READY</string>
+    <string name="status_empty">EMPTY</string>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- BLE symbol simplified -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,20 L54,88 M54,20 L66,32 L54,44 L66,56 L54,44 L42,56 M54,20 L42,32 L54,44" />
+    <!-- Circle outline -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="3"
+        android:pathData="M54,18 A36,36 0 1,1 53.999,18Z" />
+</vector>
