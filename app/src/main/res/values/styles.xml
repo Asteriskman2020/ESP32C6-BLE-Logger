@@ -31,8 +31,11 @@
         <item name="cornerRadius">8dp</item>
     </style>
 
+    <!-- Base text style -->
+    <style name="TextStyle" parent="android:Widget.TextView" />
+
     <!-- Section Header Text -->
-    <style name="TextStyle.SectionHeader">
+    <style name="TextStyle.SectionHeader" parent="TextStyle">
         <item name="android:textColor">@color/colorPrimaryDark</item>
         <item name="android:textSize">13sp</item>
         <item name="android:textStyle">bold</item>
@@ -41,14 +44,14 @@
     </style>
 
     <!-- Sensor Value Text -->
-    <style name="TextStyle.SensorValue">
+    <style name="TextStyle.SensorValue" parent="TextStyle">
         <item name="android:textColor">@color/textPrimary</item>
         <item name="android:textSize">22sp</item>
         <item name="android:textStyle">bold</item>
     </style>
 
     <!-- Sensor Label Text -->
-    <style name="TextStyle.SensorLabel">
+    <style name="TextStyle.SensorLabel" parent="TextStyle">
         <item name="android:textColor">@color/textSecondary</item>
         <item name="android:textSize">14sp</item>
     </style>
